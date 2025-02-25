@@ -129,4 +129,46 @@
             }
         }
     }
+
+    // .about__achievements
+
+    &__achievements {
+        background: v.$grey-bg;
+        // .about__achievements-title
+
+        &-title {
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            text-align: center;
+            color: v.$main-regular;
+            padding-top: 30px;
+        }
+
+        // .about__achievements-slide
+
+        &-slide {
+            border-radius: 12px;
+            overflow: hidden;
+            background: v.$basic-white;
+        }
+
+        &-img {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 25px 10px;
+        }
+    }
+
+    // .about__swiper
+
+    &__swiper {
+        margin: 30px 60px;
+    }
+
+    // .about__wrapper
+
+    &__wrapper {
+    }
 }

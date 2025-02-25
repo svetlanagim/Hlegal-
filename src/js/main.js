@@ -7,18 +7,18 @@ import 'swiper/css/autoplay';
 import '../scss/style.scss';
 
 (function () {
-   const burgerOpenMenu = document.querySelector('.header__box-burger');
-const navigationMenu = document.querySelector('.header__nav')
-const burgerCloseMenu = document.querySelector('.header__nav-close')
+	const burgerOpenMenu = document.querySelector('.header__box-burger');
+	const navigationMenu = document.querySelector('.header__nav')
+	const burgerCloseMenu = document.querySelector('.header__nav-close')
 
-burgerOpenMenu.addEventListener("click", () => {
-    navigationMenu.classList.add('active');
-});
+	burgerOpenMenu.addEventListener("click", () => {
+		navigationMenu.classList.add('active');
+	});
 
-burgerCloseMenu.addEventListener('click', () => {
-    navigationMenu.classList.remove('active');
-}); 
-} ) ();
+	burgerCloseMenu.addEventListener('click', () => {
+		navigationMenu.classList.remove('active');
+	});
+})();
 
 (function () {
 	const tabsItem = document.querySelectorAll('.tabs__list-item');
@@ -38,21 +38,47 @@ burgerCloseMenu.addEventListener('click', () => {
 	})
 })();
 
-const swiper = new Swiper('.team__swiper', {
+(function () {
+	const swiper = new Swiper('.team__swiper', {
+		modules: [Pagination, Autoplay],
+		spaceBetween: 30,
+		loop: true,
+		speed: 2000,
+		autoplay: {
+			delay: 5000,
+		},
+
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+	});
+})();
+
+
+const swiper = new Swiper('.about__swiper', {
 	modules: [Pagination, Autoplay],
 	spaceBetween: 30,
 	loop: true,
-	speed: 2000,
+	// speed: 2000,
 	autoplay: {
 		delay: 5000,
 	},
-	
+
 	pagination: {
 		el: '.swiper-pagination',
 		clickable: true,
 	},
-	
-
+	breakpoints: {
+		// when window width is >= 320px
+		768: {
+			slidesPerView: 3,
+			spaceBetween: 40,
+		},
+		1024: {
+			slidesPerView: 4,
+		},
+	},
 
 
 });
